@@ -1,23 +1,14 @@
-import logo from './logo.svg';
 import './App.css';
+import Header from './components/Header'
+import Intro from './components/Intro'
 
 function App() {
+  const arr = new Array(100).fill("hello")
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Header title="鏘." items={["Skills", "About", "Gallery", "Contact"]}/>
+      <Intro />
+      {arr.map(x => <h1>{x}</h1>)} 
     </div>
   );
 }

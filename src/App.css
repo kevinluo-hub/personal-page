@@ -41,13 +41,29 @@ body {
   margin: 30px 0;
 }
 
+.slick-prev:before {
+  content: url('./images/la.png');
+}
+
+.slick-next:before {
+  content: url('./images/ra.png');
+}
+
+.skills {
+  margin: 0 40px;
+}
+
 .skill {
   border-radius: 5px;
   box-sizing: border-box;
   box-shadow: 3px 3px 12px #b8b5b5;
-  width: 300px;
-  height: 250px;
-  margin: 50px 50px;
+  min-height: 270px;
+  margin: 50px 25px;
+  transition:.5s;
+}
+
+.skill:hover {
+  transform: scale(1.1);
 }
 
 .skill-img {
@@ -89,3 +105,4 @@ body {
     opacity: 0;
   }
 }
+

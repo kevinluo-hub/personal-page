@@ -13,12 +13,12 @@ body {
   align-items: center;
 }
 
-.title {
+.header-text {
   margin-right: auto;
   font-size: larger;
 }
 
-.menu-items {
+.flex {
   display: flex;
 }
 
@@ -26,7 +26,66 @@ body {
   margin-left: 40px;
 }
 
+.intro {
+  margin-top: 70px;
+  font-size: 70px;
+  font-weight: 600;
+  line-height: 140%;
+  min-height: 500px;
+  margin-left: 20px;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 30px 0;
+}
+
+.skill {
+  border-radius: 5px;
+  box-sizing: border-box;
+  box-shadow: 3px 3px 12px #b8b5b5;
+  width: 300px;
+  height: 250px;
+  margin: 50px 50px;
+}
+
+.skill-img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 5px 5px 0 0;
+}
+
+.skill-title {
+  margin: 5px;
+}
+
+.skill-text {
+  margin: auto 5px;
+  font-size: 14px;
+}
+
 .sticky {
   position: sticky;
   top: 0
+}
+
+.linebreak {
+  white-space: pre-line;
+}
+
+.typing:after {
+  content: '|';
+}
+
+.typed:after {
+  content: '|';
+  animation: 1s blink step-start infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
 }

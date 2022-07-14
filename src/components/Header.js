@@ -9,22 +9,22 @@ export default function Header({title, items}) {
         return () => {
           window.removeEventListener('scroll', stickNavbar);
         };
-      }, []);
+    }, []);
 
-      const stickNavbar = () => {
-        if (window !== undefined) {
+    const stickNavbar = () => {
+    if (window !== undefined) {
             let windowHeight = window.scrollY;
             windowHeight > 40 ? setSticky('sticky') : setSticky('')
         }
-      }
+    }
 
     return (
         <div className={`Header ${sticky}`}>
-            <div className='title'>
+            <div className='header-text'>
                 <p><b>{title}</b></p>
             </div>
-            <div className='menu-items'>
-                {items.map(x => <p className='menu-item'>{x}</p>)}
+            <div className='flex'>
+                {items.map(x => <a href='https://www.google.com' className='menu-item'>{x}</a>)}
             </div> 
         </div>
     )

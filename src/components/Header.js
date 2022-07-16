@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import { Link } from 'react-scroll' 
+
 
 export default function Header({title, items}) {
     const [sticky, setSticky] = useState('')
@@ -24,7 +26,7 @@ export default function Header({title, items}) {
                 <p><b>{title}</b></p>
             </div>
             <div className='flex'>
-                {items.map(x => <a href='https://www.google.com' className='menu-item'>{x}</a>)}
+                {items.map(x => <Link to={x} spy={true} smooth={true} duration={500} offset={-100} className="menu-item">{x}</Link>)}
             </div> 
         </div>
     )

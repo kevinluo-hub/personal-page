@@ -14,6 +14,10 @@ body {
   cursor: pointer;
 }
 
+.center {
+  text-align: center;
+}
+
 .zoom {
   transition: transform .5s;
 }
@@ -110,7 +114,7 @@ body {
 }
 
 .skills {
-  margin: 0 40px;
+  margin: 0 40px 100px;
 }
 
 .skill {
@@ -135,6 +139,25 @@ body {
 .skill-text {
   margin: auto 5px;
   font-size: 14px;
+}
+
+.about {
+  margin: 0 40px;
+  align-items: center;
+}
+
+.profile-pic {
+  width: 300px;
+  border-radius: 100%;
+  margin: 20px 12% 0 0;
+}
+
+.center > .profile-pic {
+  margin: 20px auto;
+}
+
+.about-text {
+  line-height: 25px;
 }
 
 .sticky {

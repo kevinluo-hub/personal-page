@@ -10,28 +10,7 @@ import Gallery from './components/Gallery'
 import Contact from './components/Contact'
 import { Element } from 'react-scroll'
 
-function App() {
-  const arr = new Array(100).fill("hello")
-
-  const sections = ["Skills", "About", "Gallery", "Contact"]
-
-  const components = {
-    'Skills': Skills,
-    'About': About,
-    'Gallery': Gallery,
-    'Contact': Contact
-  }
-  
-  const content = sections.map(s => {
-    const Name = components[s]
-    return (
-      <Element id={s}>
-        <Title text={s} />
-        <Name />
-      </Element>
-    )
-  })
-
+function App() {  
   const [sidebarOpen, setSidebarOpen] = useState(false)
   const [collapse, setCollapse] = useState(false)
 
@@ -41,7 +20,7 @@ function App() {
 
   const handleResize = () => {
     const {innerWidth, innerHeight} = window;
-    innerWidth > 720 ? setCollapse(false) : setCollapse(true)
+    innerWidth > 880 ? setCollapse(false) : setCollapse(true)
   }
 
   useEffect(() => {
@@ -58,17 +37,33 @@ function App() {
     }
   }, [collapse])
 
+  const sections = ["Skills", "About", "Gallery", "Contact"]
+
+  const components = {
+    'Skills': Skills,
+    'About': About,
+    'Gallery': Gallery,
+    'Contact': Contact
+  }
+
+  const content = sections.map(s => {
+    const Name = components[s]
+    return (
+      <Element id={s}>
+        <Title text={s} />
+        <Name collapse={collapse}/>
+      </Element>
+    )
+  })
+
   return (
     <div>
       <Header title="鏘." items={sections} handleOpen={handleOpen} collapse={collapse}/>
       <Sidebar isOpen={sidebarOpen} items={sections} handleOpen={handleOpen}/>
-      {/* { !sidebarOpen &&  */}
-        <div className='page'>
-          <Intro text={'Hello!\nI\'m Kevin Luo,\na developer and bodybuilder\nbased in Boston, MA'}/>
-          {content}
-          {arr.map(x => <h1>{x}</h1>)}
-        </div>
-      {/* } */}
+      <div className='page'>
+        <Intro text={'Hello!\nI\'m Kevin Luo,\na developer and bodybuilder\nbased in Boston, MA'}/>
+        {content}
+      </div>
     </div>
   );
 }

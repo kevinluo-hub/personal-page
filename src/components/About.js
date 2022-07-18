@@ -4,7 +4,7 @@ import kluo from '../images/kluo.jpeg'
 export default function About({collapse}) {
     return (
         <div className={`about ${collapse ? "center" : "flex"}`}>
-            <img src={kluo} alt="profile picture" className="profile-pic" /> 
+            <img src={kluo} alt="Kevin Luo Profile" className="profile-pic" /> 
             <div className="about-text">
                 <p className='title'>A Little More About Myself...</p>
                 <p> Hello World! I am a new Computer Science graduate from the University of Massachusetts Amherst. 
